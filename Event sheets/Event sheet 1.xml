@@ -1,0 +1,930 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="te" sid="460348522588282" static="0" type="number">0</variable>
+        <event-group description="" sid="498924146651423" title="colors">
+            <sub-events>
+                <event-block sid="820594260702932">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="151031621765091" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Add key" sid="672901603507559" type="vars">
+                            <param id="0" name="Key">&quot;cPrimary&quot;</param>
+                            <param id="1" name="Value">98&amp;&quot;,&quot;&amp;0&amp;&quot;,&quot;&amp;238</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="581488503201805">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="541757129538638" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="119461150984434">
+                    <conditions>
+                        <condition id="-20" name="Is on mobile device" sid="251659060285959" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-20" name="Set layout scale" sid="634828204592646" type="System">
+                            <param id="0" name="Scale">3</param>
+                        </action>
+                        <action id="-7" name="Scroll to position" sid="852573397553094" type="System">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="936633835040962">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="552896163653941" type="System" />
+            </conditions>
+            <actions>
+                <action id="-7" name="Set size" sid="766328989149210" type="rip">
+                    <param id="0" name="Width">lerp(Self.width, Self.rad, 1 - 0.01 ^ dt)</param>
+                    <param id="1" name="Height">lerp(Self.width, Self.rad, 1 - 0.01 ^ dt)</param>
+                </action>
+                <action id="-28" name="Set effect parameter" sid="165422651142871" type="shadow">
+                    <param id="0" name="Effect">&quot;BlurVertical&quot;</param>
+                    <param id="1" name="Parameter index">0</param>
+                    <param id="2" name="Value">Self.currBlur</param>
+                </action>
+                <action id="-28" name="Set effect parameter" sid="107387556195323" type="shadow">
+                    <param id="0" name="Effect">&quot;BlurHorizontal&quot;</param>
+                    <param id="1" name="Parameter index">0</param>
+                    <param id="2" name="Value">Self.currBlur</param>
+                </action>
+                <action id="-28" name="Set effect parameter" sid="762095910679337" type="shadow">
+                    <param id="0" name="Effect">&quot;RadialBlur&quot;</param>
+                    <param id="1" name="Parameter index">1</param>
+                    <param id="2" name="Value">Self.currBlur</param>
+                </action>
+                <action id="-10" name="Set value" sid="272823934345374" type="shadow">
+                    <param id="0" name="Instance variable">currBlur</param>
+                    <param id="1" name="Value">lerp(Self.currBlur, Self.blur, 1 - 0.0001 ^ dt)</param>
+                </action>
+                <action id="-9" name="Set value" sid="315353341302169" type="System">
+                    <param id="0" name="Variable">te</param>
+                    <param id="1" name="Value">Browser.DevicePixelRatio</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="714641598066367">
+            <conditions>
+                <condition id="1" name="On any touch end" sid="458948855415499" type="Touch" />
+            </conditions>
+            <actions>
+                <action behavior="Fade" id="1" name="Start fade" sid="314626148023471" type="rip" />
+                <action id="-10" name="Set value" sid="866546060764604" type="shadow">
+                    <param id="0" name="Instance variable">blur</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="746668921938007">
+                    <conditions>
+                        <condition id="4" name="Is touching object" sid="384645980360881" type="Touch">
+                            <param id="0" name="Object">button</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="164445982347384" type="button">
+                            <param id="0" name="Unique ID">vars.Get(&quot;buttUID&quot;)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="426030525000489">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="783151092092752" type="button">
+                                    <param id="0" name="Instance variable">func</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="660447708451373" type="Function">
+                                    <param id="0" name="Name">button.func</param>
+                                    <param id="1" name="Parameter {n}">tokenat(button.funcParam, 0, &quot;~:~&quot;){###}tokenat(button.funcParam, 1, &quot;~:~&quot;){###}tokenat(button.funcParam, 2, &quot;~:~&quot;){###}tokenat(button.funcParam, 3, &quot;~:~&quot;){###}tokenat(button.funcParam, 4, &quot;~:~&quot;){###}tokenat(button.funcParam, 5, &quot;~:~&quot;){###}tokenat(button.funcParam, 6, &quot;~:~&quot;){###}tokenat(button.funcParam, 7, &quot;~:~&quot;){###}tokenat(button.funcParam, 8, &quot;~:~&quot;){###}tokenat(button.funcParam, 9, &quot;~:~&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="142067410689699">
+            <conditions>
+                <condition id="-18" name="On created" sid="432386378796695" type="buttonText" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set web font" sid="438084199740975" type="buttonText">
+                    <param id="0" name="Family name">&quot;Roboto&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="185438657438716">
+            <conditions>
+                <condition id="-18" name="On created" sid="168619370106405" type="BBcodeText" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set web font" sid="667418163379275" type="BBcodeText">
+                    <param id="0" name="Family name">&quot;Roboto&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap&quot;</param>
+                </action>
+                <action id="-3" name="Set position" sid="212199994589637" type="BBcodeText">
+                    <param id="0" name="X">Self.X+Self.wrap</param>
+                    <param id="1" name="Y">Self.y+Self.wrap</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="429385087402031">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="691510400555673" type="BBcodeText">
+                            <param id="0" name="Instance variable">size</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">14</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="729822366810602" type="BBcodeText">
+                            <param id="0" name="Text">&quot;   &quot;&amp;Self.Text</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="887053935992997">
+            <conditions>
+                <condition id="-18" name="On created" sid="627056337349413" type="iconText" />
+            </conditions>
+            <actions>
+                <action disabled="1" id="-16" name="Wait" sid="386384678150069" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="5" name="Set web font" sid="993539750150456" type="iconText">
+                    <param id="0" name="Family name">&quot;Material Icons&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css2?family=Material+Icons&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="768066959420601" type="System">
+                    <param id="0" name="Seconds">0.01</param>
+                </action>
+                <action id="-7" name="Set size" sid="299510616933284" type="iconText">
+                    <param id="0" name="Width">Self.TextWidth</param>
+                    <param id="1" name="Height">Self.Textheight</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="812068333548015" title="func">
+            <sub-events>
+                <event-block sid="124016092174363">
+                    <conditions>
+                        <condition id="0" name="On function" sid="457992222145277" type="Function">
+                            <param id="0" name="Name">&quot;ButtonWidth&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="436508499241699">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="486176417417228" type="button">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="501470169296919" type="button">
+                                    <param id="0" name="Width">Function.Param(1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="800433735135745">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="383075717687032" type="shadow">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="913208717358616" type="shadow">
+                                    <param id="0" name="Width">Function.Param(1)+32</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="763667848859465">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="618495833575409" type="9patch">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="366347128008637" type="9patch">
+                                    <param id="0" name="Width">Function.Param(1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="185918928887174">
+                    <conditions>
+                        <condition id="0" name="On function" sid="115857606713493" type="Function">
+                            <param id="0" name="Name">&quot;ButtonHeight&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="653947060795287">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="904910972505778" type="button">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-6" name="Set height" sid="313065780755221" type="button">
+                                    <param id="0" name="Height">Function.Param(1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="843372820372425">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="344613154133167" type="shadow">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-6" name="Set height" sid="492096673872547" type="shadow">
+                                    <param id="0" name="Height">Function.Param(1)+32</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="931867757806765">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="423224232099171" type="9patch">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-6" name="Set height" sid="745062971752742" type="9patch">
+                                    <param id="0" name="Height">Function.Param(1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="582726387070454">
+                    <conditions>
+                        <condition id="0" name="On function" sid="811007345929902" type="Function">
+                            <param id="0" name="Name">&quot;Close&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Close" sid="286191769724405" type="Browser" />
+                    </actions>
+                </event-block>
+                <event-block sid="422119704325330">
+                    <conditions>
+                        <condition id="0" name="On function" sid="771672061769264" type="Function">
+                            <param id="0" name="Name">&quot;R&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="239420851614719" type="Function">
+                            <param id="0" name="Value">int(tokenat(Function.Param(0), 0, &quot;,&quot;))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="793265956803046">
+                    <conditions>
+                        <condition id="0" name="On function" sid="930270942125901" type="Function">
+                            <param id="0" name="Name">&quot;G&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="733628592381100" type="Function">
+                            <param id="0" name="Value">int(tokenat(Function.Param(0), 1, &quot;,&quot;))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="569437349273726">
+                    <conditions>
+                        <condition id="0" name="On function" sid="308369202975605" type="Function">
+                            <param id="0" name="Name">&quot;B&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="116270288887933" type="Function">
+                            <param id="0" name="Value">int(tokenat(Function.Param(0), 2, &quot;,&quot;))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="503533761012213">
+                    <conditions>
+                        <condition id="0" name="On function" sid="633135401883779" type="Function">
+                            <param id="0" name="Name">&quot;RGB&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="465283197649059" type="Function">
+                            <param id="0" name="Value">rgb(int(tokenat(Function.Param(0), 0, &quot;,&quot;)), int(tokenat(Function.Param(0), 1, &quot;,&quot;)), int(tokenat(Function.Param(0), 2, &quot;,&quot;)))</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="352494827486022" title="components">
+            <sub-events>
+                <event-group description="" sid="465983117189743" title="ripple">
+                    <sub-events>
+                        <event-block sid="968177677789791">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="357482819093486" type="Touch">
+                                    <param id="0" name="Object">button</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="716801440620087" type="System">
+                                    <param id="0" name="Object to create">rip</param>
+                                    <param id="1" name="Layer">&quot;ui&quot;</param>
+                                    <param id="2" name="X">Touch.X</param>
+                                    <param id="3" name="Y">Touch.y</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="776024101720174" type="rip">
+                                    <param id="0" name="Instance variable">rad</param>
+                                    <param id="1" name="Value">button.Width*2.7</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="625628635208571" type="rip">
+                                    <param id="0" name="Width">15</param>
+                                    <param id="1" name="Height">15</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="665433606113139" type="rip" />
+                                <action id="-10" name="Set value" sid="119122634744381" type="rip">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">button.UID</param>
+                                </action>
+                                <action id="0" name="Add key" sid="884433068888814" type="vars">
+                                    <param id="0" name="Key">&quot;buttUID&quot;</param>
+                                    <param id="1" name="Value">button.UID</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="790243275597315">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="816121237694852" type="shadow">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">button.UID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="422402509841963" type="shadow">
+                                            <param id="0" name="Instance variable">blur</param>
+                                            <param id="1" name="Value">55</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="616857112356368">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="891065458711733" type="button">
+                                            <param id="0" name="Instance variable">colored</param>
+                                        </condition>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="732191590902313" type="button">
+                                            <param id="0" name="Instance variable">bright</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="233465217711352" type="rip">
+                                            <param id="0" name="Opacity">15</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="589224121606342" type="rip">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">0</param>
+                                            <param id="2" name="Value">Function.Call(&quot;R&quot;, vars.Get(&quot;cPrimary&quot;))/2.55</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="292329593163664" type="rip">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">1</param>
+                                            <param id="2" name="Value">Function.Call(&quot;G&quot;, vars.Get(&quot;cPrimary&quot;))/2.55</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="602276352983418" type="rip">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">2</param>
+                                            <param id="2" name="Value">Function.Call(&quot;B&quot;, vars.Get(&quot;cPrimary&quot;))/2.55</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="458220851369781">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="477963805931931" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="217481125824340">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="504766601745823" type="button">
+                                                    <param id="0" name="Instance variable">bright</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Set opacity" sid="658757591423279" type="rip">
+                                                    <param id="0" name="Opacity">15</param>
+                                                </action>
+                                                <action id="-28" name="Set effect parameter" sid="354404030191372" type="rip">
+                                                    <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                                    <param id="1" name="Parameter index">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </action>
+                                                <action id="-28" name="Set effect parameter" sid="185448228740059" type="rip">
+                                                    <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                                    <param id="1" name="Parameter index">1</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </action>
+                                                <action id="-28" name="Set effect parameter" sid="781518782269406" type="rip">
+                                                    <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                                    <param id="1" name="Parameter index">2</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="468356462422152">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="784377510646805" type="rip">
+                                    <param id="0" name="Object">button</param>
+                                </condition>
+                                <condition id="-14" inverted="1" name="Pick by unique ID" sid="304072634728052" type="button">
+                                    <param id="0" name="Unique ID">rip.id</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-24" name="Move to top" sid="559508318901313" type="button" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="281524400281539">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="837502212625172" type="rip">
+                                    <param id="0" name="Object">BBcodeText</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-24" name="Move to top" sid="441704266435190" type="BBcodeText" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="814900085590572">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="591041318835758" type="rip">
+                                    <param id="0" name="Object">shadow</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-24" name="Move to top" sid="716576867716823" type="shadow" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="116930050434637">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="905043650259855" type="rip">
+                                    <param id="0" name="Object">buttonText</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-24" name="Move to top" sid="568947835053969" type="buttonText" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="622913820506668">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="746920413184503" type="rip">
+                                    <param id="0" name="Object">9patch</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-24" name="Move to top" sid="320090623991620" type="9patch" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="523571888582596" title="button">
+                    <sub-events>
+                        <event-block sid="641348238908951">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="717666655140312" type="button">
+                                    <param id="0" name="Unique ID">shadow.id</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="741033342457312" type="shadow">
+                                    <param id="0" name="Width">button.Width</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="227574731891243">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="750190352804333" type="button">
+                                    <param id="0" name="Object">buttonText</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-24" name="Move to top" sid="250894782197919" type="buttonText" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="918528610765712">
+                            <conditions>
+                                <condition id="-18" name="On created" sid="294632191592696" type="button" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="678771155114750">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="853280438046599" type="button">
+                                            <param id="0" name="Instance variable">preset</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;raised&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="782963936718813" type="button">
+                                            <param id="0" name="Instance variable">bright</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="404997335630118" type="button">
+                                            <param id="0" name="Instance variable">outline</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="809951727541535" type="button">
+                                            <param id="0" name="Instance variable">shadow</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="736032342014875" type="button">
+                                            <param id="0" name="Instance variable">colored</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="252955931114869">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="327388340501882" type="button">
+                                            <param id="0" name="Instance variable">preset</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;flat&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="280016243964671" type="button">
+                                            <param id="0" name="Instance variable">bright</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="508998598561431" type="button">
+                                            <param id="0" name="Instance variable">outline</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="937944158769772" type="button">
+                                            <param id="0" name="Instance variable">shadow</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="470527268391632" type="button">
+                                            <param id="0" name="Instance variable">colored</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="227235071715018">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="138640820019211" type="button">
+                                            <param id="0" name="Instance variable">preset</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;flat_colored&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="672711205588184" type="button">
+                                            <param id="0" name="Instance variable">bright</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="367715200949189" type="button">
+                                            <param id="0" name="Instance variable">outline</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="323495569064414" type="button">
+                                            <param id="0" name="Instance variable">shadow</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="456763650388393" type="button">
+                                            <param id="0" name="Instance variable">colored</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="923013930404369">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="660370448849502" type="button">
+                                            <param id="0" name="Instance variable">preset</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;colored&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="490899310802337" type="button">
+                                            <param id="0" name="Instance variable">bright</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="241970382677689" type="button">
+                                            <param id="0" name="Instance variable">outline</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="185364610772825" type="button">
+                                            <param id="0" name="Instance variable">shadow</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="955582350816029" type="button">
+                                            <param id="0" name="Instance variable">colored</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="631743839773099">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="277211904897728" type="button">
+                                            <param id="0" name="Instance variable">shadow</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="773208177737846" type="System">
+                                            <param id="0" name="Object to create">shadow</param>
+                                            <param id="1" name="Layer">&quot;ui&quot;</param>
+                                            <param id="2" name="X">button.X</param>
+                                            <param id="3" name="Y">button.y</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="623765685141365" type="shadow">
+                                            <param id="0" name="Width">button.Width+32</param>
+                                            <param id="1" name="Height">button.height+32</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="547912898033631" type="shadow">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Value">button.uid</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="921049922157968" type="shadow">
+                                            <param id="0" name="Pin to">button</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="466415684606757">
+                            <conditions>
+                                <condition id="-18" name="On created" sid="699064955356112" type="button" />
+                                <condition id="-7" name="Compare instance variable" sid="253748058867416" type="button">
+                                    <param id="0" name="Instance variable">text</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="552379050341657" type="System">
+                                    <param id="0" name="Object to create">buttonText</param>
+                                    <param id="1" name="Layer">&quot;ui&quot;</param>
+                                    <param id="2" name="X">button.X</param>
+                                    <param id="3" name="Y">button.y+2</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="453433611871883" type="buttonText">
+                                    <param id="0" name="Pin to">button</param>
+                                    <param id="1" name="Mode">0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="216763112192917" type="buttonText">
+                                    <param id="0" name="Text">uppercase(button.text)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="887311306242989" type="buttonText">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">button.UID</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="891063081229680" type="System">
+                                    <param id="0" name="Seconds">0.01</param>
+                                </action>
+                                <action id="0" name="Call function" sid="111834846985086" type="Function">
+                                    <param id="0" name="Name">&quot;ButtonWidth&quot;</param>
+                                    <param id="1" name="Parameter {n}">button.UID{###}buttonText.TextWidth+32</param>
+                                </action>
+                                <action id="0" name="Call function" sid="231621026416841" type="Function">
+                                    <param id="0" name="Name">&quot;ButtonHeight&quot;</param>
+                                    <param id="1" name="Parameter {n}">button.UID{###}buttonText.Textheight+16</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="830478032072149">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="865677324405607" type="button">
+                                            <param id="0" name="Instance variable">colored</param>
+                                        </condition>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="842353835604449" type="button">
+                                            <param id="0" name="Instance variable">bright</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="930208747645700" type="buttonText">
+                                            <param id="0" name="Color">Function.Call(&quot;RGB&quot;, vars.Get(&quot;cPrimary&quot;))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="936685926514375">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="541653828174031" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="624524941924888">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="964199034961909" type="button">
+                                                    <param id="0" name="Instance variable">bright</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set font color" sid="265676772500183" type="buttonText">
+                                                    <param id="0" name="Color">rgb(0, 0, 0)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="712722523657726">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="543290482162511" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set font color" sid="808548121690578" type="buttonText">
+                                                    <param id="0" name="Color">rgb(255, 255, 255)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="688148943037775">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="978599783302286" type="button">
+                                            <param id="0" name="Instance variable">bright</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-28" name="Set effect parameter" sid="174388013102592" type="button">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">0</param>
+                                            <param id="2" name="Value">100</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="762537269756658" type="button">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">1</param>
+                                            <param id="2" name="Value">100</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="723460270867788" type="button">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">2</param>
+                                            <param id="2" name="Value">100</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="546718774953857">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="533017630079903" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-28" name="Set effect parameter" sid="762502253117779" type="button">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">0</param>
+                                            <param id="2" name="Value">Function.Call(&quot;R&quot;, vars.Get(&quot;cPrimary&quot;))/2.55</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="266616634162922" type="button">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">1</param>
+                                            <param id="2" name="Value">Function.Call(&quot;G&quot;, vars.Get(&quot;cPrimary&quot;))/2.55</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="567941925439886" type="button">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">2</param>
+                                            <param id="2" name="Value">Function.Call(&quot;B&quot;, vars.Get(&quot;cPrimary&quot;))/2.55</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="691811397686739">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="383680337439952" type="button">
+                                            <param id="0" name="Instance variable">outline</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="304102595275843" type="System">
+                                            <param id="0" name="Object to create">9patch</param>
+                                            <param id="1" name="Layer">&quot;ui&quot;</param>
+                                            <param id="2" name="X">button.X</param>
+                                            <param id="3" name="Y">button.y</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="426941635008359" type="9patch">
+                                            <param id="0" name="Width">button.Width</param>
+                                            <param id="1" name="Height">button.height</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="713936624817488" type="9patch">
+                                            <param id="0" name="Pin to">button</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="366616947819900" type="9patch">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Value">button.UID</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="379410736858378" type="9patch">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">0</param>
+                                            <param id="2" name="Value">Function.Call(&quot;R&quot;, vars.Get(&quot;cPrimary&quot;))/2.55</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="642254406402389" type="9patch">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">1</param>
+                                            <param id="2" name="Value">Function.Call(&quot;G&quot;, vars.Get(&quot;cPrimary&quot;))/2.55</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="565389976873368" type="9patch">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">2</param>
+                                            <param id="2" name="Value">Function.Call(&quot;B&quot;, vars.Get(&quot;cPrimary&quot;))/2.55</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="457673221968186">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="377056050423881" type="button">
+                                            <param id="0" name="Instance variable">wrap</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="135045565826260" type="button">
+                                            <param id="0" name="X">(0+(Self.Width/2))+Self.wrapSize</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="869745436482069" title="text">
+                    <sub-events>
+                        <event-block sid="691890331661360">
+                            <conditions>
+                                <condition id="0" name="On function" sid="289871730473429" type="Function">
+                                    <param id="0" name="Name">&quot;Text&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="889243735713885" type="System">
+                                    <param id="0" name="Object to create">BBcodeText</param>
+                                    <param id="1" name="Layer">&quot;ui&quot;</param>
+                                    <param id="2" name="X">Function.Param(0)</param>
+                                    <param id="3" name="Y">Function.Param(1)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="691699488176297" type="BBcodeText">
+                                    <param id="0" name="Text">Function.Param(2)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="682719089055068">
+                                    <conditions>
+                                        <condition id="1" name="Compare parameter" sid="128308331987006" type="Function">
+                                            <param id="0" name="Index">5</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;fit&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="319368991032549" type="System">
+                                            <param id="0" name="Seconds">0.001</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="984411149657217" type="BBcodeText">
+                                            <param id="0" name="Width">Self.TextWidth</param>
+                                            <param id="1" name="Height">Self.Textheight</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="878056113405850">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="555620890249444" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-7" name="Set size" sid="259880673032826" type="BBcodeText">
+                                            <param id="0" name="Width">Function.Param(3)</param>
+                                            <param id="1" name="Height">Function.Param(4)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

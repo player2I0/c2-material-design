@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Material Design</name>
+    <description></description>
+    <version>beta 1.0</version>
+    <author>player210</author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>2oxzwdrw7qd8i</unique-id>
+    <saved-with-version>21000</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Rex.Rainbow" id="rex_bbcodeText" version="0.100000001">BBcode Text</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
+        <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
+        <effect author="Scirra" id="brightness">Brightness</effect>
+        <effect author="Scirra" id="radialblur">Radial blur</effect>
+        <effect author="Scirra" id="tint">Tint</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>854</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Point</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="button" sid="112453095343009">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="text" sid="373413257998468" type="string" />
+                <instance-variable name="preset" sid="195129026294200" type="string" />
+                <instance-variable name="bright" sid="732808959668050" type="boolean" />
+                <instance-variable name="func" sid="458138145915874" type="string" />
+                <instance-variable name="funcParam" sid="509106079455773" type="string" />
+                <instance-variable name="outline" sid="280620568049879" type="boolean" />
+                <instance-variable name="shadow" sid="442695427252167" type="boolean" />
+                <instance-variable name="colored" sid="578782336862423" type="boolean" />
+                <instance-variable name="wrap" sid="252797746046825" type="boolean" />
+                <instance-variable name="wrapSize" sid="165892421754875" type="number" />
+            </instance-variables>
+            <effects>
+                <effect-type name="Tint">
+                    <effect id="tint" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="163452858115063" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="rip" sid="440275526624493">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="rad" sid="506887273158196" type="number" />
+                <instance-variable name="id" sid="626670994405777" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Fade" sid="238685156015077">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="Brightness">
+                    <effect id="brightness" />
+                </effect-type>
+                <effect-type name="Tint">
+                    <effect id="tint" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="341486882923635" speed="5">
+                    <frame duration="1" hotspotX="0.501048" hotspotY="0.501048" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Touch" sid="493156564571401">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="shadow" sid="164765381985844">
+            <plugin id="NinePatch" />
+            <instance-variables>
+                <instance-variable name="currBlur" sid="806921188245087" type="number" />
+                <instance-variable name="blur" sid="476724433530310" type="number" />
+                <instance-variable name="id" sid="250132114921359" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pin" sid="709438319144905">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="BlurVertical">
+                    <effect id="blurvertical" />
+                </effect-type>
+                <effect-type name="BlurHorizontal">
+                    <effect id="blurhorizontal" />
+                </effect-type>
+                <effect-type name="RadialBlur">
+                    <effect id="radialblur" />
+                </effect-type>
+            </effects>
+            <texture />
+        </object-type>
+        <object-type name="buttonText" sid="816765106347554">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="id" sid="789945872036522" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pin" sid="632598023177863">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Function" sid="120287494740059">
+            <plugin id="Function" />
+        </object-type>
+        <object-type global="1" name="vars" sid="572001749310505">
+            <plugin id="Dictionary" />
+        </object-type>
+        <object-type name="Browser" sid="643545271541319">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="9patch" sid="765059676998080">
+            <plugin id="NinePatch" />
+            <instance-variables>
+                <instance-variable name="id" sid="912060646883703" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pin" sid="342214639566822">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="Tint">
+                    <effect id="tint" />
+                </effect-type>
+            </effects>
+            <texture />
+        </object-type>
+        <object-type name="iconText" sid="413099497913757">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Text" sid="557878436015683">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="name" sid="530473110264310" type="string" />
+            </instance-variables>
+        </object-type>
+        <object-type name="BBcodeText" sid="581235317008147">
+            <plugin id="rex_bbcodeText" />
+            <instance-variables>
+                <instance-variable name="name" sid="459595476222531" type="string" />
+                <instance-variable name="wrap" sid="717738291718822" type="number" />
+                <instance-variable name="size" sid="789990583129322" type="number" />
+            </instance-variables>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Touch" uid="2">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Function" uid="10" />
+        <global-instance type="Browser" uid="12" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
